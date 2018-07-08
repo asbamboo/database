@@ -18,11 +18,11 @@ class Connection extends DoctrineConnection implements ConnectionInterface
      * 
      * @param array $params
      * @param string $metadata_config
-     * @param int $metadata_type
+     * @param string $metadata_type
      * @param bool $is_dev
      * @return ConnectionInterface
      */
-    public static function create(array $params, string $metadata_config, int $metadata_type, bool $is_dev = false) : ConnectionInterface
+    public static function create(array $params, string $metadata_config, string $metadata_type, bool $is_dev = false) : ConnectionInterface
     {
         switch ($metadata_type){
             case ConnectionInterface::MATADATA_ANNOTATION:
