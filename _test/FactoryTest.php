@@ -7,12 +7,12 @@ use asbamboo\database\Factory;
 use asbamboo\database\Manager;
 
 /**
- * 
+ *
  * @author 李春寅 <licy2013@aliyun.com>
  * @since 2018年7月8日
  */
 class FactoryTest extends TestCase
-{    
+{
     public function testAddConnectionSetId()
     {
         $Factory    = new Factory();
@@ -24,7 +24,7 @@ class FactoryTest extends TestCase
         $Manager    = $Factory->getManager('default_id');
         $this->assertInstanceOf(Manager::class, $Manager);
     }
-    
+
     public function testAddConnectionNotSetId()
     {
         $Factory    = new Factory();
