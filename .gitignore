@@ -1,7 +1,7 @@
 /vendor/
-cli-config.php
-config/
-var/
+/cli-config.php
+/config/
+/var/
 .buildpath
 .project
 .settings/
