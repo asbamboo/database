@@ -16,14 +16,14 @@ class OrmGenerateEntitiesCommand extends CommandAbstract
     {
         parent::__construct();
         $this->addArgument('dest-path', 'The path to generate your entity classes.', '', null, true);
-        $this->AddOption('filter', null, 'A string pattern used to match entities that should be processed.');
-        $this->AddOption('generate-annotations', false, 'Flag to define if generator should generate annotation metadata on entities.');
-        $this->AddOption('generate-methods', true, 'Flag to define if generator should generate stub methods on entities.');
-        $this->AddOption('regenerate-entities', false, 'Flag to define if generator should regenerate entity if it exists.');
-        $this->AddOption('update-entities', true, 'Flag to define if generator should only update entity if it exists.');
-        $this->AddOption('extend', null, 'Defines a base class to be extended by generated entity classes.');
-        $this->AddOption('num-spaces', 4, 'Defines the number of indentation spaces');
-        $this->AddOption('no-backup', null, 'Flag to define if generator should avoid backuping existing entity file if it exists.');
+        $this->addOption('filter', null, 'A string pattern used to match entities that should be processed.');
+        $this->addOption('generate-annotations', false, 'Flag to define if generator should generate annotation metadata on entities.');
+        $this->addOption('generate-methods', true, 'Flag to define if generator should generate stub methods on entities.');
+        $this->addOption('regenerate-entities', false, 'Flag to define if generator should regenerate entity if it exists.');
+        $this->addOption('update-entities', true, 'Flag to define if generator should only update entity if it exists.');
+        $this->addOption('extend', null, 'Defines a base class to be extended by generated entity classes.');
+        $this->addOption('num-spaces', 4, 'Defines the number of indentation spaces');
+        $this->addOption('no-backup', null, 'Flag to define if generator should avoid backuping existing entity file if it exists.');
     }
 
     /**
@@ -46,7 +46,7 @@ class OrmGenerateEntitiesCommand extends CommandAbstract
         $console    = $_SERVER['SCRIPT_FILENAME'];
 
         return <<<HELP
-    该命令功能与doctrine/orm中的dbal:import相同
+    该命令功能与doctrine/orm中的orm:generate-entities相同
 
     Generate entity classes and method stubs from your mapping information.
 
