@@ -8,31 +8,28 @@ use Doctrine\ORM\Tools\Setup;
 /**
  * 数据库连接
  *  - 基于doctrine
- * 
+ *
  * @author 李春寅 <licy2013@aliyun.com>
  * @since 2018年7月8日
  */
 class Connection extends DoctrineConnection implements ConnectionInterface
 {
     /**
-     * 
-     * @param array $params
-     * @param string $metadata_config
-     * @param string $metadata_type
-     * @param bool $is_dev
-     * @return ConnectionInterface
+     *
+     * {@inheritDoc}
+     * @see \asbamboo\database\ConnectionInterface::create()
      */
-    public static function create(array $params, string $metadata_config, string $metadata_type, bool $is_dev = false) : ConnectionInterface
+    public static function create(array $params, /*string|array*/ $metadata_config, string $metadata_type, bool $is_dev = false) : ConnectionInterface
     {
         switch ($metadata_type){
             case ConnectionInterface::MATADATA_ANNOTATION:
-                $config = Setup::createAnnotationMetadataConfiguration([$metadata_config], $is_dev);
+                $config = Setup::createAnnotationMetadataConfiguration((array) $metadata_config, $is_dev);
                 break;
             case ConnectionInterface::MATADATA_YAML:
-                $config = Setup::createYAMLMetadataConfiguration([$metadata_config], $is_dev);
+                $config = Setup::createYAMLMetadataConfiguration((array) $metadata_config, $is_dev);
                 break;
             case ConnectionInterface::MATADATA_XML:
-                $config = Setup::createXMLMetadataConfiguration([$metadata_config], $is_dev);
+                $config = Setup::createXMLMetadataConfiguration((array) $metadata_config, $is_dev);
                 break;
         }
         $params['wrapperClass'] = __CLASS__;
