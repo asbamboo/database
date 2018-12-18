@@ -18,6 +18,7 @@
         "php": "^7.2",
         "asbamboo/autoload": "^1.0",
         "asbamboo/console": "^1.0",
+        "asbamboo/event": "^1.0",
         "doctrine/orm": "^2.6",
         "symfony/yaml" : "^4.0"
     },
