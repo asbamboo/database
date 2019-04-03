@@ -22,7 +22,7 @@ use asbamboo\database\command\OrmSchemaToolDropCommand;
 use asbamboo\database\command\OrmSchemaToolUpdateCommand;
 use asbamboo\database\command\OrmValidateSchemaCommand;
 
-require dirname(__DIR__) . DIRECTORY_SEPARATOR . 'vendor' . DIRECTORY_SEPARATOR . 'autoload.php';
+require getcwd() . DIRECTORY_SEPARATOR . 'vendor' . DIRECTORY_SEPARATOR . 'autoload.php';
 
 $Processor  = new Processor();
 $Processor->commandCollection()
